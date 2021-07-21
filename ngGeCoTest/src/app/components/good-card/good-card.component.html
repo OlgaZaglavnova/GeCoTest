@@ -1,0 +1,11 @@
+<div class="good-card" *ngIf="goodItem">
+    <div class="good-card__name">
+        {{ goodItem.name }}
+    </div>
+    <div class="good-card__price">
+        &#36; {{ goodItem.price}}
+    </div>
+    <button type="button" class="cart-btn" mat-raised-button (click)="addToCart()">
+        Add to cart
+    </button>
+</div>

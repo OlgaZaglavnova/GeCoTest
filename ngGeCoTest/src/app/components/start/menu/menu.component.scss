@@ -1,0 +1,9 @@
+.menu {
+    font-size: 18px;
+    &_item {
+        margin-bottom: 10px;
+        & a {
+            text-decoration: none;
+        }
+    }
+}

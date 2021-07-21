@@ -1,0 +1,25 @@
+.cart-item {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    padding: 10px;
+    &__price {
+        text-align: center;
+    }
+    &__count {
+        text-align: center;
+    }
+    &__delete {
+        text-align: center;
+    }
+}
+.cart-delete-btn {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    & mat-icon {
+        font-size: 12px;
+        font-weight: bold;
+        height: 20px;
+        width: 18px;
+    }
+}

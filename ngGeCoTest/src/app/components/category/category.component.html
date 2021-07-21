@@ -1,0 +1,7 @@
+<div class="category_list" *ngIf="goods; else loading">
+    <app-good-card *ngFor="let goodItem of goods" [goodItem]="goodItem"></app-good-card>
+    <button type="button" class="cart-btn" mat-raised-button (click)="openCart()">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+</div>
+<ng-template #loading>Loading...</ng-template>

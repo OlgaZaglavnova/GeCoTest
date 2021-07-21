@@ -1,0 +1,14 @@
+<div class="cart" *ngIf="cartGoods && cartGoods.length > 0; else noCartItems">
+    <div class="cart-item header">
+        <div>Name</div>
+        <div>Price</div>
+        <div>Category</div>
+        <div>Count</div>
+        <div>Delete</div>
+    </div>
+    <app-cart-item *ngFor="let cartItem of cartGoods" [cartItem]="cartItem" (refreshCart)="refreshCart()">
+    </app-cart-item>
+</div>
+<ng-template #noCartItems>
+    There are no goods in the cart =)
+</ng-template>

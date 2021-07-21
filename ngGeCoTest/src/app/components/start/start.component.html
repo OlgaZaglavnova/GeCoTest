@@ -1,0 +1,16 @@
+<mat-drawer-container class="menu-container" autosize>
+    <mat-drawer #drawer class="menu-sidenav" mode="side" [opened]="menuIsOpened">
+        <app-menu></app-menu>
+        <mat-divider></mat-divider>
+        <div class="menu-cart">
+            <a [routerLink]="['/cart']">Goto Cart</a>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content class="menu-sidenav-content">
+        <button type="button" class="menu-btn" mat-raised-button (click)="menuIsOpened = !menuIsOpened">
+            <mat-icon *ngIf="!menuIsOpened">menu</mat-icon>
+            <mat-icon *ngIf="menuIsOpened">chevron_left</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+</mat-drawer-container>

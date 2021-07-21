@@ -1,0 +1,12 @@
+.cart {
+    display: grid;
+}
+.cart-item {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    padding: 10px;
+}
+.header {
+    font-weight: bold;
+    text-align: center;
+}
