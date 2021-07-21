@@ -39,14 +39,13 @@ export class CartItemComponent implements OnInit {
 
   deleteitemFromCart(): void {
     const localStorageCartStr = this.dataService.getLocalStorageCart();
-    const localStorageCart = localStorageCartStr ? localStorageCartStr.split(';').map(item => +item).filter(item => item !== 0) : null;
-    const lastIndex = this.cartItem?.id ? localStorageCart?.lastIndexOf(this.cartItem?.id) : -1;
-    if (lastIndex && lastIndex > 0) {
-      localStorageCart?.splice(lastIndex, 1);
-    } else if (lastIndex === 0) {
-      localStorageCart?.pop();
-    }
-    const newLocalStorageCartStr: string | undefined = localStorageCart?.join(';') + ';';
+    let localStorageCart = localStorageCartStr?.split(';').map(elem => +elem).filter(elem => elem !== 0);
+    const lastidx = this.cartItem ? localStorageCart.lastIndexOf(this.cartItem?.id) : -1;
+
+    if (lastidx > -1) {
+      localStorageCart = localStorageCart.filter((elem, idx) => idx !== lastidx);
+      }
+    const newLocalStorageCartStr = localStorageCart && localStorageCart.length > 0 ? localStorageCart.join(';') + ';' : '';
     this.dataService.setLocalStorageCart(newLocalStorageCartStr);
     this.itemCount -= 1;
     this.refreshCart.emit();

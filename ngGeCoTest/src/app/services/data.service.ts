@@ -22,15 +22,13 @@ export class DataService {
     return this.http.get(this.dataPath);
   }
 
-  getLocalStorageCart(): string | null {
+  getLocalStorageCart(): string {
     const cart = localStorage.getItem(CartVariableName.LocalStorageCartName);
     return cart ?? '';
   }
 
-  setLocalStorageCart(newValue: string | null | undefined): void {
-    if (newValue) {
+  setLocalStorageCart(newValue: string): void {
       localStorage.setItem(CartVariableName.LocalStorageCartName, newValue);
-    }
   }
 
 }
