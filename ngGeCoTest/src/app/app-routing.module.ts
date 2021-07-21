@@ -5,15 +5,15 @@ import { CategoryComponent } from './components/category/category.component';
 
 const routes: Routes = [
   {
-    path: '/',
+    path: '',
     component: CategoryComponent
   },
   {
-    path: '/category/:id',
+    path: 'category/:id',
     component: CategoryComponent
   },
   {
-    path: '/cart',
+    path: 'cart',
     component: CartComponent
   }
 ];
